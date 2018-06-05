@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DrawerNavigator } from 'react-navigation';
-import Beranda from './home';
+import Beranda from './beranda';
 import Sidebar from './Sidebar';
 import Login from './view/Login.js';
 import Signup from './view/Signup.js';
@@ -9,6 +9,7 @@ import Profile from './view/Profile.js';
 import Demo from './demo.js';
 import EditProfile from './view/EditProfile.js';
 import Maps from './view/maps.js';
+import ListPrint from './view/ListPrint.js';
 
 
 const Screens = DrawerNavigator({
@@ -35,6 +36,9 @@ const Screens = DrawerNavigator({
   },
   Maps: {
     screen: Maps
+  },
+  ListPrint: {
+    screen: ListPrint
   },
 },
   // {

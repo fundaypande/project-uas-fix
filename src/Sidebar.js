@@ -30,6 +30,9 @@ export default class Sidebar extends React.Component {
   toMaps = () => {
     this.props.navigation.navigate('Maps');
   }
+  toListPrint = () => {
+    this.props.navigation.navigate('ListPrint');
+  }
 
   render() {
     return (
@@ -80,6 +83,12 @@ export default class Sidebar extends React.Component {
             style={{ padding: 10, marginLeft: 10, marginTop: 5 }}
           >
             <Text>Lokasi Kantor</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={this.toListPrint}
+            style={{ padding: 10, marginLeft: 10, marginTop: 5 }}
+          >
+            <Text>List Print</Text>
           </TouchableOpacity>
 
         </Content>
