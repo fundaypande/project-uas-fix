@@ -10,7 +10,7 @@ class SecondActivity extends Component {
   navigatePrint = () => {
    this.props.navigation.navigate('Print');
 
-  }
+}
 
   navigateProfil = () => {
    this.props.navigation.navigate('Profile');

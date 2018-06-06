@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  TextInput,
   View,
   ListView,
   ToolbarAndroid
@@ -71,6 +67,7 @@ export default class ListPrint extends Component {
       // transform the children to an array
       var tasks = [];
       dataSnapshot.forEach((child) => {
+        console.log(dataSnapshot);
         tasks.push({
           name: child.val(),
           kunci: child.key,
