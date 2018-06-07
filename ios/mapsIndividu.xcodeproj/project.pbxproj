@@ -52,6 +52,7 @@
 		7725B8B706DC4AA3B43F2B02 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 148FB7DA3BDC4A87922942CD /* Zocial.ttf */; };
 		9B01D7EF7BA4470FA829326B /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E341A5F154FB69587D5AD /* libRNFetchBlob.a */; };
 		73C759FCF7A64D24AB754BDB /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A8362F48DE4979B3B5C963 /* libRNImagePicker.a */; };
+		80584D9EB03A40918368C593 /* libRNDocumentPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68101CE7265F4B4D9622681F /* libRNDocumentPicker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -375,6 +376,8 @@
 		609E341A5F154FB69587D5AD /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		78A3932433D7461C82BA824B /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		82A8362F48DE4979B3B5C963 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		4741434227E24CF0BEA1AF0E /* RNDocumentPicker.xcodeproj */ = {isa = PBXFileReference; name = "RNDocumentPicker.xcodeproj"; path = "../node_modules/react-native-document-picker/ios/RNDocumentPicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		68101CE7265F4B4D9622681F /* libRNDocumentPicker.a */ = {isa = PBXFileReference; name = "libRNDocumentPicker.a"; path = "libRNDocumentPicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +409,7 @@
 				48E4F158F2A0433B859381F8 /* libAirMaps.a in Frameworks */,
 				9B01D7EF7BA4470FA829326B /* libRNFetchBlob.a in Frameworks */,
 				73C759FCF7A64D24AB754BDB /* libRNImagePicker.a in Frameworks */,
+				80584D9EB03A40918368C593 /* libRNDocumentPicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +599,7 @@
 				71560DEBA2734F038195F10A /* AirMaps.xcodeproj */,
 				651A344CA2D849BABCBB4C69 /* RNFetchBlob.xcodeproj */,
 				78A3932433D7461C82BA824B /* RNImagePicker.xcodeproj */,
+				4741434227E24CF0BEA1AF0E /* RNDocumentPicker.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1257,12 +1262,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Debug;
@@ -1286,12 +1293,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Release;
@@ -1316,6 +1325,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Debug;
@@ -1339,6 +1349,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Release;
@@ -1371,12 +1382,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Debug;
@@ -1409,12 +1422,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Release;
@@ -1446,12 +1461,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Debug;
@@ -1483,12 +1500,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+					"$(SRCROOT)\..\node_modules\react-native-document-picker\ios\RNDocumentPicker",
 				);
 			};
 			name = Release;

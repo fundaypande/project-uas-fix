@@ -33,6 +33,9 @@ export default class Sidebar extends React.Component {
   toListPrint = () => {
     this.props.navigation.navigate('ListPrint');
   }
+  toPrint = () => {
+    this.props.navigation.navigate('Print');
+  }
 
   render() {
     return (
@@ -65,12 +68,7 @@ export default class Sidebar extends React.Component {
               );
             }}
           />
-          <TouchableOpacity
-            onPress={this.logOut}
-            style={{ padding: 10, marginLeft: 10, marginTop: 5 }}
-          >
-            <Text>Log Out</Text>
-          </TouchableOpacity>
+
 
           <TouchableOpacity
             onPress={this.toProfile}
@@ -89,6 +87,18 @@ export default class Sidebar extends React.Component {
             style={{ padding: 10, marginLeft: 10, marginTop: 5 }}
           >
             <Text>List Print</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={this.toPrint}
+            style={{ padding: 10, marginLeft: 10, marginTop: 5 }}
+          >
+            <Text>Print</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={this.logOut}
+            style={{ padding: 10, marginLeft: 10, marginTop: 5 }}
+          >
+            <Text>Log Out</Text>
           </TouchableOpacity>
 
         </Content>

@@ -11,6 +11,7 @@ import EditProfile from './view/EditProfile.js';
 import Maps from './view/maps.js';
 import ListPrint from './view/ListPrint.js';
 import ListItemInfo from './view/ListItemInfo.js';
+import Print from './view/Print.js';
 
 
 const Screens = DrawerNavigator({
@@ -43,6 +44,9 @@ const Screens = DrawerNavigator({
   },
   ListItemInfo: {
     screen: ListItemInfo
+  },
+  Print: {
+    screen: Print
   },
 },
   // {

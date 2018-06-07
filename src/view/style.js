@@ -20,12 +20,13 @@ var styles = StyleSheet.create({
   listItemTitle: {
     flex: 6,
     color: '#000',
-    fontSize: 16,
+    fontSize: 14,
   },
   listItemAction: {
     flex: 1,
     width: 40,
-    height: 40
+    height: 40,
+    color: '#FF0000'
   },
   navbar: {
     alignItems: 'center',

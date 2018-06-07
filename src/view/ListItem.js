@@ -10,7 +10,8 @@ import {
   Alert
 } from 'react-native';
 import * as firebase from 'firebase';
-import styles from './style.js'
+import styles from './style.js';
+import { Icon } from 'native-base';
 
 class ListItem extends Component {
   constructor(props) {
@@ -70,7 +71,7 @@ class ListItem extends Component {
           {this.props.task.kunci}
         </Text>
         <TouchableHighlight onPress={this.props.onTaskCompletion}>
-          <Image style={styles.listItemAction} source={{uri: 'https://1.bp.blogspot.com/-uRaHoFqqsxY/V70he-ZYRlI/AAAAAAAAA7A/S4Js-D6sMR8vs28NFv7W39rFRAPX7XIWgCLcB/s1600/ic_done_black_24dp.png'}} />
+          <Icon name="ios-trash" />
         </TouchableHighlight>
         {/*Icon taken from google's material icon pack: https://design.google.com/icons/#ic_done*/}
       </View>

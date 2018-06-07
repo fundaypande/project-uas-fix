@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import {
   View,
   ListView,
-  ToolbarAndroid
+  Alert
 } from 'react-native';
 import * as firebase from 'firebase';
 import ListItem from './ListItem.js';
 import styles from './style.js'
+import CustomHeader from '../CustomHeader.js';
+
+const storage = firebase.storage();
 
 export default class ListPrint extends Component {
 
@@ -35,9 +38,10 @@ export default class ListPrint extends Component {
   render() {
     return (
       <View style={styles.container}>
-  			<ToolbarAndroid
-          style={styles.navbar}
-          title="Todo List" />
+        <CustomHeader
+          title="List Print"
+          onPress={() => this.props.navigation.toggleDrawer()}
+        />
         {/*A list view with our dataSource and a method to render each row*/}
         {/*Allows lists to be empty, can be removed in future versions of react*/}
         <ListView
@@ -54,6 +58,17 @@ export default class ListPrint extends Component {
     const onTaskCompletion = () => {
       // removes the item from the list
       this.tasksRef.child(task._key).remove()
+
+      const storageRef = storage.ref('files');
+      var desertRef = storageRef.child(task._key);
+      // Delete the file
+      desertRef.delete().then(() => {
+        Alert.alert('done delete');
+      }).catch((error) => {
+        Alert.alert('error delete');
+        console.log(error);
+        console.log(desertRef);
+      });
     };
     return (
       <ListItem task={task} onTaskCompletion={onTaskCompletion} />
