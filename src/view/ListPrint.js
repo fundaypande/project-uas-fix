@@ -10,6 +10,7 @@ import styles from './style.js'
 import CustomHeader from '../CustomHeader.js';
 
 const storage = firebase.storage();
+let admin = '';
 
 export default class ListPrint extends Component {
 
@@ -17,7 +18,26 @@ export default class ListPrint extends Component {
     super(props);
     const users = firebase.auth().currentUser;
     const uid = users.uid;
-    this.tasksRef = firebase.database().ref('users/' + uid + '/file');
+
+    const starCountRef = firebase.database().ref('users/' + uid);
+    starCountRef.on('value', (snapshot) => {
+      const userObj = snapshot.val();
+      if (userObj != null) {
+        admin = userObj.admin;
+      }
+    });
+
+    console.log('admin inii '+ admin);
+
+    if (admin) {
+      const ref = firebase.database().ref();
+      this.tasksRef = ref.child('users').orderByChild('nama');
+      console.log('admin masuk list print');
+    } else {
+      this.tasksRef = firebase.database().ref('users/' + uid + '/file');
+      console.log('else list print');
+    }
+
     // Each list must has a dataSource, to set that data for it you must call: cloneWithRows()
     // Check out the docs on the React Native List View here:
     // https://facebook.github.io/react-native/docs/listview.html
@@ -26,8 +46,25 @@ export default class ListPrint extends Component {
     });
     this.state = {
       dataSource: dataSource, // dataSource for our list
-      newTask: '' // The name of the new task
+      newTask: '', // The name of the new task
+      admin: ''
     };
+  }
+
+
+  componentWillMount() {
+    const users = firebase.auth().currentUser;
+    const uid = users.uid;
+    const starCountRef = firebase.database().ref('users/' + uid);
+    starCountRef.on('value', (snapshot) => {
+      const userObj = snapshot.val();
+      if (userObj != null) {
+        this.setState({
+          admin: userObj.admin
+        });
+        admin = userObj.admin;
+      }
+    });
   }
 
   componentDidMount() {

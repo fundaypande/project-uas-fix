@@ -12,6 +12,10 @@ import Maps from './view/maps.js';
 import ListPrint from './view/ListPrint.js';
 import ListItemInfo from './view/ListItemInfo.js';
 import Print from './view/Print.js';
+import Position from './view/CurentPosition.js';
+import uasLogin from './uas/login.js';
+import uasLupa from './uas/lupapassword.js';
+import ListMahasiswa from './uas/uasList.js';
 
 
 const Screens = DrawerNavigator({
@@ -48,10 +52,22 @@ const Screens = DrawerNavigator({
   Print: {
     screen: Print
   },
+  Position: {
+    screen: Position
+  },
+  uasLogin: {
+    screen: uasLogin
+  },
+  uasLupa: {
+    screen: uasLupa
+  },
+  ListMahasiswa: {
+    screen: ListMahasiswa
+  },
 },
-  // {
-  //   initialRouteName: 'Maps',
-  // },
+  {
+    initialRouteName: 'uasLogin',
+  },
   {
     contentComponent: props => <Sidebar {...props} />
   }

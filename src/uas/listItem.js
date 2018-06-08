@@ -9,7 +9,6 @@ import {
   Linking,
   Alert
 } from 'react-native';
-import * as firebase from 'firebase';
 import styles from './style.js';
 import { Icon } from 'native-base';
 
@@ -17,15 +16,6 @@ let admin = '';
 
 class ListItem extends Component {
   constructor(props) {
-    const users = firebase.auth().currentUser;
-    const uid = users.uid;
-    const starCountRef = firebase.database().ref('users/' + uid);
-    starCountRef.on('value', (snapshot) => {
-      const userObj = snapshot.val();
-      if (userObj != null) {
-        admin = userObj.admin;
-      }
-    });
 
     super(props);
     this.state = {
@@ -34,38 +24,6 @@ class ListItem extends Component {
       status: '',
       link: '',
     };
-  }
-
-  componentWillMount() {
-    const users = firebase.auth().currentUser;
-    const uid = users.uid;
-    let starCountRef = ''
-    console.log('data admain '+admin);
-
-    if (admin) {
-      starCountRef = firebase.database().ref('users/' + uid + '/file/' + this.props.task.kunci);
-      console.log('admin masuk list item');
-    } else {
-      starCountRef = firebase.database().ref('users/' + uid + '/file/' + this.props.task.kunci);
-    }
-
-
-    //const starCountRef = firebase.database().ref('users/' + uid + '/file/' + this.props.task.kunci);
-    starCountRef.on('value', (snapshot) => {
-      const userObj = snapshot.val();
-      if (userObj != null) {
-        const judulku = userObj.judul;
-        const subjectku = userObj.subject;
-        const statusku = userObj.status;
-        const linku = userObj.link;
-        this.setState({
-          judul: judulku,
-          subject: subjectku,
-          status: statusku,
-          link: linku,
-        });
-      }
-    });
   }
 
   alertInfo() {
